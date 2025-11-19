@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    user-select: none;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+.tela {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+#menu {
+    background-image: url('../assets/menu_bg.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 10;
+}
+#menu h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 10px black;
+    text-align: center;
+}
+#menu p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px black;
+    background: rgba(0,0,0,0.4);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #28a745, #218838);
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+    font-weight: bold;
+}
+.btn:hover {
+    transform: scale(1.05);
+}
+
+#jogo {
+    display: flex;
+    flex-direction: row;
+    background-color: transparent;
+    align-items: stretch;
+}
+
+#gameContent {
+    flex-grow: 1;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: black;
+    position: relative;
+    cursor: crosshair;
+}
+
+#infoPanel {
+    width: 300px;
+    min-width: 250px;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    z-index: 5;
+}
+
+#hud {
+    position: static;
+    top: auto; left: auto; right: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: auto;
+    margin-bottom: 20px;
+}
+.painel {
+    width: calc(100% - 40px);
+    margin: 0;
+    pointer-events: none;
+}
+
+.alvo {
+    position: absolute;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.debug-mode .alvo {
+    border: 2px dashed red !important;
+    background: rgba(255,0,0,0.2) !important;
+}
+
+.alvo.morto {
+    border: 4px solid #00ff00 !important;
+    background: rgba(0,255,0,0.3) !important;
+    pointer-events: none;
+    box-shadow: 0 0 20px #00ff00;
+}
+
+#msg {
+    position: static;
+    transform: none;
+    margin-top: auto;
+    margin-bottom: 20px;
+    width: calc(100% - 40px);
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    text-align: center;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 20;
+    color: #333;
+}
+#msg h2 {
+    color: #28a745;
+    margin: 0;
+    font-size: 2rem;
+}
+
+#placarFinal {
+     background-image: url('../assets/menu_bg.png');
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.score-box {
+    background: rgba(0,0,0,0.6);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    backdrop-filter: blur(8px);
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentinela da Amazônia - Versão Final</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="menu" class="tela">
+        <h1>SENTINELA DA<br>AMAZÔNIA</h1>
+        <p>Missão: Elimine os focos de mosquito da Dengue.</p>
+        <button class="btn" onclick="iniciarJogo()">INICIAR MISSÃO</button>
+    </div>
+
+    <div id="jogo" class="tela">
+        <div id="gameContent" onclick="debugClick(event)">
+            <div id="alvosContainer"></div>
+        </div>
+        
+        <div id="infoPanel">
+            <div id="hud">
+                <div class="painel">Região: <span id="nomeFase">Quintal</span></div>
+                <div class="painel">Focos Restantes: <span id="restantes">0</span></div>
+            </div>
+            <div id="msg"><h2 id="txtMsg">FOCO ELIMINADO!</h2></div>
+        </div>
+    </div>
+
+    <div id="placarFinal" class="tela">
+        <div class="score-box">
+            <h1>MISSÃO CUMPRIDA!</h1>
+            <p>Você protegeu sua comunidade.</p>
+            <div class="big-number" id="pontuacaoFinal">100%</div>
+            <p>Não se esqueça de esvaziar esses recipientes para o mosquito não procriar-se!</p>
+        </div>
+        <button class="btn" onclick="location.reload()">NOVA PATRULHA</button>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
